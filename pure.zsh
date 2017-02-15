@@ -122,7 +122,7 @@ prompt_pure_preprompt_render() {
 	# git pull/push arrows
 	preprompt+="%F{cyan}${prompt_pure_git_arrows}%f"
     # show number of jobs
-    preprompt+=" %F{yellow}[${suspendedjobs}]%f"
+    [[ $suspendedjobs -gt 0 ]] && preprompt+=" %F{yellow}[${suspendedjobs}]%f"
 	# username and machine if applicable
 	preprompt+=$prompt_pure_username
 	# execution time

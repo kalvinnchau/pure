@@ -108,7 +108,7 @@ prompt_pure_preprompt_render() {
 	local git_color=242
 	[[ -n ${prompt_pure_git_last_dirty_check_timestamp+x} ]] && git_color=red
 
-    local suspendedjobs=$#jobstates
+	local suspendedjobs=$#jobstates
 
 	# Initialize the preprompt array.
 	local -a preprompt_parts
@@ -126,8 +126,8 @@ prompt_pure_preprompt_render() {
 		preprompt_parts+=('%F{cyan}${prompt_pure_git_arrows}%f')
 	fi
 
-    # Show number of jobs
-    [[ $suspendedjobs -gt 0 ]] && preprompt+=" %F{yellow}[${suspendedjobs}]%f"
+	# Show number of jobs
+	[[ $suspendedjobs -gt 0 ]] && preprompt+=" %F{yellow}[${suspendedjobs}]%f"
 	# Username and machine, if applicable.
 	[[ -n $prompt_pure_username ]] && preprompt_parts+=('$prompt_pure_username')
 	# Execution time.

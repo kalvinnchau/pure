@@ -127,7 +127,7 @@ prompt_pure_preprompt_render() {
 	fi
 
 	# Show number of jobs
-	[[ $suspendedjobs -gt 0 ]] && preprompt+=" %F{yellow}[${suspendedjobs}]%f"
+	[[ $suspendedjobs -gt 0 ]] && preprompt_parts+=" %F{yellow}[${suspendedjobs}]%f"
 	# Username and machine, if applicable.
 	[[ -n $prompt_pure_username ]] && preprompt_parts+=('$prompt_pure_username')
 	# Execution time.

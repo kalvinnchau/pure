@@ -113,6 +113,7 @@ prompt_pure_preprompt_render() {
 	local git_color=242
 	[[ -n ${prompt_pure_git_last_dirty_check_timestamp+x} ]] && git_color=red
 
+    # Get number of background jobs
     local suspendedjobs=$#jobstates
 
 	# construct preprompt, beginning with path
@@ -121,7 +122,7 @@ prompt_pure_preprompt_render() {
 	preprompt+="%F{$git_color}${vcs_info_msg_0_}${prompt_pure_git_dirty}%f"
 	# git pull/push arrows
 	preprompt+="%F{cyan}${prompt_pure_git_arrows}%f"
-    # show number of jobs
+    # show number of jobs only if > 0
     [[ $suspendedjobs -gt 0 ]] && preprompt+=" %F{yellow}[${suspendedjobs}]%f"
 	# username and machine if applicable
 	preprompt+=$prompt_pure_username
